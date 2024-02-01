@@ -33,4 +33,17 @@ const SearchResult = () => {
                     {result?.map((item) => {
                         if (item?.type !== "video") return false;
                         let video = item.video;
-                        
+                        return (
+                            <SearchResultVideoCard
+                                key={video.videoId}
+                                video={video}
+                            />
+                        );
+                    })}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default SearchResult;

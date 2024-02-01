@@ -33,4 +33,18 @@ const SuggestionVideoCard = ({ video }) => {
                         <span>{`${abbreviateNumber(
                             video?.stats?.views,
                             2
-  
+                        )} views`}</span>
+                        <span className="flex text-[24px] leading-none font-bold text-white/[0.7] relative top-[-10px] mx-1">
+                            .
+                        </span>
+                        <span className="truncate">
+                            {video?.publishedTimeText}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </Link>
+    );
+};
+
+export default SuggestionVideoCard;

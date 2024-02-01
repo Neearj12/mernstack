@@ -10,8 +10,8 @@ import { Context } from "../context/contextApi";
 import SuggestionVideoCard from "./SuggestionVideoCard";
 
 const VideoDetails = () => {
-    const [video, setVideo] = useState({});
-    const [relatedVideos, setRelatedVideos] = useState([]);
+    const [video, setVideo] = useState();
+    const [relatedVideos, setRelatedVideos] = useState();
     const { id } = useParams();
     const { setloading } = useContext(Context);
 
@@ -63,8 +63,6 @@ const VideoDetails = () => {
                                     <img
                                         className="h-full w-full object-cover"
                                         src={video?.author?.avatar[0]?.url}
-                                        alt="video author"
-                                       
                                     />
                                 </div>
                             </div>

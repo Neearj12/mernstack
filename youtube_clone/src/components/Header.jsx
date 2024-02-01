@@ -10,9 +10,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { FiBell } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
 
-import  {Context} from "../context/contextApi";
- 
-
+import { Context } from "../context/contextApi";
 import Loader from "../shared/loader";
 
 const Header = () => {
@@ -21,8 +19,6 @@ const Header = () => {
     const { loading, mobileMenu, setmobileMenu } = useContext(Context);
 
     const navigate = useNavigate();
-
-    //Search Result function
 
     const searchQueryHandler = (event) => {
         if (
@@ -34,15 +30,14 @@ const Header = () => {
     };
 
     const mobileMenuToggle = () => {
-      
         setmobileMenu(!mobileMenu);
-      
-      };
+    };
+
     const { pathname } = useLocation();
     const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
 
     return (
-        <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-black dark:bg-black">
+        <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-black">
             {loading && <Loader />}
 
             <div className="flex h-5 items-center">
@@ -58,9 +53,9 @@ const Header = () => {
                         )}
                     </div>
                 )}
-                <Link to="/" className="flex text-white h-5 items-center">
+                <Link to="/" className="flex h-5 items-center">
                     <img
-                        className="h-full hidden md:block"
+                        className="h-full hidden dark:md:block"
                         src={ytLogo}
                         alt="Youtube"
                     />
@@ -83,7 +78,7 @@ const Header = () => {
                         onKeyUp={searchQueryHandler}
                         placeholder="Search"
                         value={searchQuery}
-                     />
+                    />
                 </div>
                 <button
                     className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]"
